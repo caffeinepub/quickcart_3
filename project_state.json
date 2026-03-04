@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A multi-page grocery delivery website (inspired by Blinkit/Zepto/Instamart) built with HTML, CSS, Bootstrap, and JavaScript. Must include Home, About Us, Contact Form, and 30+ additional relevant pages. Should be responsive, user-friendly, and well-structured.",
+  "architectural_notes": [
+    "Tech stack: HTML, CSS, Bootstrap, JavaScript only (no backend frameworks)",
+    "All pages must be responsive and mobile-friendly via Bootstrap grid",
+    "Website theme: quick grocery delivery platform (Blinkit/Zepto/Instamart style)"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- FreshCart brand logo — green leaf icon with bold sans-serif wordmark on white background (freshcart-logo.dim_300x80.png)\n- Hero banner background — vibrant overhead flat-lay of fresh colorful fruits and vegetables on a white surface (hero-banner.dim_1440x560.png)\n- Generic product placeholder — clean top-down view of a brown paper grocery bag with produce peeking out, on a light green background (product-placeholder.dim_400x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-home-page-with-a-hero-banner-featuring-a-bold-headline-search-bar-and-cta-button-featured-categories-section-top-deals-offers-section-popular-products-grid-app-download-banner-and-footer",
+      "title": "Create a Home Page with a hero banner (featuring a bold headline, search bar, and CTA button), featured categories section, top deals/offers section, popular products grid, app download banner, and footer.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-about-us-page-with-company-mission-statement-founding-story-team-section-with-member-cards-core-values-section-and-a-timeline-of-milestones",
+      "title": "Create an About Us Page with company mission statement, founding story, team section with member cards, core values section, and a timeline of milestones.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-us-page-with-a-contact-form-name-email-phone-message-fields-and-submit-button-office-address-phone-number-email-and-an-embedded-map-placeholder",
+      "title": "Create a Contact Us Page with a contact form (name, email, phone, message fields and submit button), office address, phone number, email, and an embedded map placeholder.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-following-30-additional-pages-relevant-to-a-grocery-delivery-platform-1-all-categories-2-fruits-vegetables-3-dairy-eggs-4-bakery-breads-5-meat-seafood-6-beverages-7-snacks-munchies-8-breakfast-cereals-9-organic-products-10-frozen-foods-11-personal-care-12-household-essentials-13-baby-care-14-pet-care-15-product-detail-page-16-search-results-17-shopping-cart-18-checkout-19-order-confirmation-20-order-tracking-21-order-history-22-user-profile-23-login-24-register-25-forgot-password-26-deals-offers-27-blog-tips-recipes-28-blog-post-detail-29-faq-30-privacy-policy-31-terms-conditions-32-refund-return-policy-33-delivery-information-34-store-locator-coverage-areas-35-careers",
+      "title": "Create the following 30+ additional pages relevant to a grocery delivery platform: (1) All Categories, (2) Fruits & Vegetables, (3) Dairy & Eggs, (4) Bakery & Breads, (5) Meat & Seafood, (6) Beverages, (7) Snacks & Munchies, (8) Breakfast & Cereals, (9) Organic Products, (10) Frozen Foods, (11) Personal Care, (12) Household Essentials, (13) Baby Care, (14) Pet Care, (15) Product Detail Page, (16) Search Results, (17) Shopping Cart, (18) Checkout, (19) Order Confirmation, (20) Order Tracking, (21) Order History, (22) User Profile, (23) Login, (24) Register, (25) Forgot Password, (26) Deals & Offers, (27) Blog / Tips & Recipes, (28) Blog Post Detail, (29) FAQ, (30) Privacy Policy, (31) Terms & Conditions, (32) Refund & Return Policy, (33) Delivery Information, (34) Store Locator / Coverage Areas, (35) Careers.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-global-responsive-layout-using-bootstrap-5-grid-system-all-pages-must-render-correctly-on-mobile-320px-tablet-768px-and-desktop-1200px-screen-widths-use-a-sticky-top-navigation-bar-with-the-freshcart-logo-category-links-search-bar-cart-icon-with-item-count-badge-and-login-account-button",
+      "title": "Implement a global responsive layout using Bootstrap 5 grid system. All pages must render correctly on mobile (≥320px), tablet (≥768px), and desktop (≥1200px) screen widths. Use a sticky top navigation bar with the FreshCart logo, category links, search bar, cart icon with item count badge, and login/account button.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-client-side-interactivity-using-vanilla-javascript-1-add-to-cart-functionality-with-localstorage-persistence-and-live-cart-count-badge-update-2-product-quantity-increment-decrement-on-cart-page-3-search-bar-filtering-on-search-results-page-4-form-validation-with-inline-error-messages-on-contact-login-register-and-checkout-forms-5-accordion-for-faq-page-6-image-carousel-on-home-hero-banner",
+      "title": "Implement client-side interactivity using vanilla JavaScript: (1) add-to-cart functionality with localStorage persistence and live cart count badge update, (2) product quantity increment/decrement on cart page, (3) search bar filtering on search results page, (4) form validation with inline error messages on Contact, Login, Register, and Checkout forms, (5) accordion for FAQ page, (6) image carousel on Home hero banner.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-design-theme-across-all-pages-use-a-vibrant-fresh-green-and-white-primary-palette-with-warm-orange-accents-use-a-clean-modern-sans-serif-typeface-product-cards-should-have-soft-shadows-rounded-corners-a-product-image-area-name-price-discount-badge-and-an-add-to-cart-button-section-headings-use-bold-typography-with-green-underline-accents-maintain-consistent-spacing-card-styles-and-button-styles-site-wide",
+      "title": "Apply a cohesive visual design theme across all pages: use a vibrant fresh-green and white primary palette with warm orange accents. Use a clean, modern sans-serif typeface. Product cards should have soft shadows, rounded corners, a product image area, name, price, discount badge, and an 'Add to Cart' button. Section headings use bold typography with green underline accents. Maintain consistent spacing, card styles, and button styles site-wide.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-integrate-the-following-static-image-assets-a-freshcart-logo-a-hero-banner-background-image-fresh-groceries-flat-lay-and-a-placeholder-product-image-used-across-all-product-cards",
+      "title": "Generate and integrate the following static image assets: a FreshCart logo, a hero banner background image (fresh groceries flat-lay), and a placeholder product image used across all product cards.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Home Page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "About Us Page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Contact Form Page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "30+ additional relevant pages (e.g. product listings, cart, checkout, categories, deals, blog, FAQ, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Responsive (mobile-friendly) design using Bootstrap",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "User-friendly and well-structured UI/UX",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "QuickCart",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

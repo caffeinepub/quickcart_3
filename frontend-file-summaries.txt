@@ -1,0 +1,14 @@
+{
+  "frontend/src/pages/AboutUs.tsx": "About Us page with company mission, founding story, core values grid, team member cards, and milestone timeline.",
+  "frontend/src/pages/ContactUs.tsx": "Contact Us page with a validated contact form (name, email, phone, subject, message), office info cards, and a map placeholder.",
+  "frontend/src/pages/PrivacyPolicy.tsx": "Privacy Policy page with 8 structured sections covering data collection, usage, sharing, cookies, security, user rights, retention, and contact.",
+  "frontend/src/pages/TermsConditions.tsx": "Terms & Conditions page with 8 sections covering acceptance, service usage, account registration, orders, delivery, IP, liability, and governing law.",
+  "frontend/src/pages/RefundReturnPolicy.tsx": "Refund & Return Policy page with quick-summary cards and detailed sections on eligibility, non-returnable items, return process, refund timelines, and cancellation.",
+  "frontend/src/pages/DeliveryInformation.tsx": "Delivery Information page with feature cards, delivery hours/fees/packaging details, and a city-by-city coverage table.",
+  "frontend/src/pages/StoreLocator.tsx": "Store Locator page with a pincode serviceability checker, map placeholder, and filterable dark store directory.",
+  "frontend/src/pages/Careers.tsx": "Careers page with company culture/perks section, open job listings with apply buttons, and a dynamic application form.",
+  "frontend/src/pages/Wishlist.tsx": "Wishlist placeholder page with an empty-state illustration and a link to browse products.",
+  "frontend/src/components/ProductCard.tsx": "Reusable product card component using window.location.href for navigation to avoid TanStack Router typed-path errors on dynamic product routes.",
+  "frontend/src/pages/Blog.tsx": "Blog listing page with a grid of post cards using plain anchor tags for dynamic blog post links to avoid TanStack Router type constraints.",
+  "frontend/src/pages/BlogPost.tsx": "Blog post detail page showing full article content, metadata, and related posts using plain anchor tags for dynamic links."
+}

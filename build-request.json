@@ -1,0 +1,184 @@
+{
+  "kind": "build_request",
+  "title": "FreshCart – Full Multi-Page Grocery Delivery Website",
+  "projectName": "FreshCart",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a Home Page with a hero banner (featuring a bold headline, search bar, and CTA button), featured categories section, top deals/offers section, popular products grid, app download banner, and footer.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Home Page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero banner displays with headline, search bar, and CTA",
+        "Featured categories section is visible",
+        "Popular products grid renders at least 8 product cards",
+        "Page is fully responsive on mobile and desktop"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create an About Us Page with company mission statement, founding story, team section with member cards, core values section, and a timeline of milestones.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "About Us Page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Mission statement and founding story are displayed",
+        "Team member cards show name, role, and photo placeholder",
+        "Values and milestones sections are present"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a Contact Us Page with a contact form (name, email, phone, message fields and submit button), office address, phone number, email, and an embedded map placeholder.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Contact Form"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form has name, email, phone, and message fields",
+        "Submit button is present and shows a success message on submission",
+        "Contact details and map placeholder are visible"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create the following 30+ additional pages relevant to a grocery delivery platform: (1) All Categories, (2) Fruits & Vegetables, (3) Dairy & Eggs, (4) Bakery & Breads, (5) Meat & Seafood, (6) Beverages, (7) Snacks & Munchies, (8) Breakfast & Cereals, (9) Organic Products, (10) Frozen Foods, (11) Personal Care, (12) Household Essentials, (13) Baby Care, (14) Pet Care, (15) Product Detail Page, (16) Search Results, (17) Shopping Cart, (18) Checkout, (19) Order Confirmation, (20) Order Tracking, (21) Order History, (22) User Profile, (23) Login, (24) Register, (25) Forgot Password, (26) Deals & Offers, (27) Blog / Tips & Recipes, (28) Blog Post Detail, (29) FAQ, (30) Privacy Policy, (31) Terms & Conditions, (32) Refund & Return Policy, (33) Delivery Information, (34) Store Locator / Coverage Areas, (35) Careers.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Minimum 30 additional relevant pages"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 35 listed pages exist and are navigable from the site",
+        "Each page has consistent header and footer",
+        "Category pages display a product grid",
+        "Cart page shows item list, quantities, and total",
+        "Checkout page has address and payment form sections",
+        "Auth pages (Login/Register/Forgot Password) have appropriate forms"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement a global responsive layout using Bootstrap 5 grid system. All pages must render correctly on mobile (≥320px), tablet (≥768px), and desktop (≥1200px) screen widths. Use a sticky top navigation bar with the FreshCart logo, category links, search bar, cart icon with item count badge, and login/account button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Responsive (Mobile-friendly)",
+          "HTML, CSS, Bootstrap"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation collapses into hamburger menu on mobile",
+        "All grids reflow correctly at each breakpoint",
+        "Cart badge updates when items are added"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement client-side interactivity using vanilla JavaScript: (1) add-to-cart functionality with localStorage persistence and live cart count badge update, (2) product quantity increment/decrement on cart page, (3) search bar filtering on search results page, (4) form validation with inline error messages on Contact, Login, Register, and Checkout forms, (5) accordion for FAQ page, (6) image carousel on Home hero banner.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "JavaScript"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Adding a product updates cart count badge without page reload",
+        "Cart quantities can be changed and totals recalculate",
+        "Search filters product cards in real time",
+        "Forms show inline errors for empty/invalid fields",
+        "FAQ accordion expands/collapses answers",
+        "Hero carousel auto-advances and supports manual navigation"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Apply a cohesive visual design theme across all pages: use a vibrant fresh-green and white primary palette with warm orange accents. Use a clean, modern sans-serif typeface. Product cards should have soft shadows, rounded corners, a product image area, name, price, discount badge, and an 'Add to Cart' button. Section headings use bold typography with green underline accents. Maintain consistent spacing, card styles, and button styles site-wide.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Properly structured and well-designed",
+          "User-friendly"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Primary color is green, accent is orange, background is white/light grey",
+        "Product cards are uniform in size and layout across all category pages",
+        "Typography is consistent across all pages",
+        "No unstyled or broken layout on any page"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Generate and integrate the following static image assets: a FreshCart logo, a hero banner background image (fresh groceries flat-lay), and a placeholder product image used across all product cards.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Home Page",
+          "Properly structured and well-designed"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Logo appears in the navbar and footer on all pages",
+        "Hero banner background image is displayed on the Home page",
+        "All product cards use the placeholder image where no specific image is available"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use only HTML, CSS, Bootstrap 5, and vanilla JavaScript — no React, Vue, or other JS frameworks",
+    "No backend or database integration; all interactivity is client-side only",
+    "All pages must share a consistent global header (navbar) and footer",
+    "Cart state must persist via localStorage"
+  ],
+  "nonGoals": [
+    "Real payment processing or integration with a payment gateway",
+    "Backend user authentication or server-side sessions",
+    "Real-time order tracking with live data",
+    "Third-party API integrations (maps, SMS, email services)",
+    "Admin dashboard or CMS"
+  ],
+  "imageRequirements": {
+    "required": [
+      "FreshCart brand logo — green leaf icon with bold sans-serif wordmark on white background (freshcart-logo.dim_300x80.png)",
+      "Hero banner background — vibrant overhead flat-lay of fresh colorful fruits and vegetables on a white surface (hero-banner.dim_1440x560.png)",
+      "Generic product placeholder — clean top-down view of a brown paper grocery bag with produce peeking out, on a light green background (product-placeholder.dim_400x400.png)"
+    ],
+    "edits": []
+  }
+}

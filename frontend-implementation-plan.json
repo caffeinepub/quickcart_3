@@ -1,0 +1,433 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "FreshCart – Full Multi-Page Grocery Delivery Website",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a Home Page with hero banner, featured categories, top deals, popular products grid, app download banner, and footer",
+      "acceptanceCriteria": [
+        "Hero banner displays with headline, search bar, and CTA",
+        "Featured categories section is visible",
+        "Popular products grid renders at least 8 product cards",
+        "Page is fully responsive on mobile and desktop"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "create",
+          "description": "Create the Home page component with hero banner section (headline, search bar, CTA button), featured categories section with category cards, top deals/offers section with promotional banners, popular products grid rendering at least 8 product cards using the placeholder image, app download banner with store badges, and footer. Wire the generated hero banner background image from frontend/public/assets/generated/hero-banner.dim_1440x560.png as the hero section background. Ensure all sections are responsive using Bootstrap 5 grid classes."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the Home page component into the main App routing configuration, setting it as the default route at path '/'. Ensure the route is accessible from the navigation."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable ProductCard component with props for product name, price, discount badge, and image. Use the generated placeholder image from frontend/public/assets/generated/product-placeholder.dim_400x400.png as the default product image. Include soft shadows, rounded corners, and an 'Add to Cart' button. Apply consistent styling with green and orange accents."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a Layout component that wraps all pages with a consistent sticky top navigation bar and footer. The navbar should include the FreshCart logo from frontend/public/assets/generated/freshcart-logo.dim_300x80.png, category links, search bar, cart icon with item count badge, and login/account button. Ensure the navbar collapses into a hamburger menu on mobile screens. The footer should include site links, contact info, and social media icons."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all route components with the Layout component to ensure consistent header and footer across all pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create an About Us Page with mission statement, founding story, team section, core values, and milestones timeline",
+      "acceptanceCriteria": [
+        "Mission statement and founding story are displayed",
+        "Team member cards show name, role, and photo placeholder",
+        "Values and milestones sections are present"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AboutUs.tsx",
+          "operation": "create",
+          "description": "Create the About Us page component with sections for company mission statement, founding story, team section displaying at least 4 member cards (each with name, role, and photo placeholder), core values section with icon cards, and a timeline of company milestones. Use Bootstrap 5 grid for responsive layout."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for the About Us page at path '/about' and wire it into the navigation menu in the Layout component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create a Contact Us Page with contact form, office details, and map placeholder",
+      "acceptanceCriteria": [
+        "Form has name, email, phone, and message fields",
+        "Submit button is present and shows a success message on submission",
+        "Contact details and map placeholder are visible"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ContactUs.tsx",
+          "operation": "create",
+          "description": "Create the Contact Us page component with a contact form (name, email, phone, message fields and submit button), office address, phone number, email, and an embedded map placeholder. Implement client-side form validation with inline error messages using vanilla JavaScript. On form submission, display a success message and clear the form. No backend submission required."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for the Contact Us page at path '/contact' and wire it into the navigation menu and footer links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create 35 additional pages covering all categories, products, cart, checkout, orders, user profile, authentication, informational pages, and more",
+      "acceptanceCriteria": [
+        "All 35 listed pages exist and are navigable from the site",
+        "Each page has consistent header and footer",
+        "Category pages display a product grid",
+        "Cart page shows item list, quantities, and total",
+        "Checkout page has address and payment form sections",
+        "Auth pages (Login/Register/Forgot Password) have appropriate forms"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AllCategories.tsx",
+          "operation": "create",
+          "description": "Create All Categories page displaying a grid of all product category cards with icons and names. Each card links to its respective category page."
+        },
+        {
+          "path": "frontend/src/pages/FruitsVegetables.tsx",
+          "operation": "create",
+          "description": "Create Fruits & Vegetables category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/DairyEggs.tsx",
+          "operation": "create",
+          "description": "Create Dairy & Eggs category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/BakeryBreads.tsx",
+          "operation": "create",
+          "description": "Create Bakery & Breads category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/MeatSeafood.tsx",
+          "operation": "create",
+          "description": "Create Meat & Seafood category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/Beverages.tsx",
+          "operation": "create",
+          "description": "Create Beverages category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/SnacksMunchies.tsx",
+          "operation": "create",
+          "description": "Create Snacks & Munchies category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/BreakfastCereals.tsx",
+          "operation": "create",
+          "description": "Create Breakfast & Cereals category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/OrganicProducts.tsx",
+          "operation": "create",
+          "description": "Create Organic Products category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/FrozenFoods.tsx",
+          "operation": "create",
+          "description": "Create Frozen Foods category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/PersonalCare.tsx",
+          "operation": "create",
+          "description": "Create Personal Care category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/HouseholdEssentials.tsx",
+          "operation": "create",
+          "description": "Create Household Essentials category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/BabyCare.tsx",
+          "operation": "create",
+          "description": "Create Baby Care category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/PetCare.tsx",
+          "operation": "create",
+          "description": "Create Pet Care category page with a product grid displaying at least 12 product cards using ProductCard component. Include category banner and filter options."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "create",
+          "description": "Create Product Detail page with product image gallery, name, price, description, nutritional info, quantity selector, add-to-cart button, and related products section. Use URL parameters to display different products."
+        },
+        {
+          "path": "frontend/src/pages/SearchResults.tsx",
+          "operation": "create",
+          "description": "Create Search Results page displaying a filterable product grid based on search query. Implement real-time client-side filtering using vanilla JavaScript that filters products as the user types in the search bar."
+        },
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "create",
+          "description": "Create Shopping Cart page displaying cart items with product image, name, price, quantity increment/decrement controls, remove button, and order summary with subtotal, delivery fee, and total. Implement quantity update and cart total recalculation using vanilla JavaScript. Read cart data from localStorage."
+        },
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "create",
+          "description": "Create Checkout page with delivery address form (name, phone, address, city, zip), payment method selection (cash on delivery, card placeholder), order summary, and place order button. Implement form validation with inline error messages using vanilla JavaScript. On submission, redirect to Order Confirmation page."
+        },
+        {
+          "path": "frontend/src/pages/OrderConfirmation.tsx",
+          "operation": "create",
+          "description": "Create Order Confirmation page displaying order number, success message, order summary, estimated delivery time, and buttons to track order or continue shopping."
+        },
+        {
+          "path": "frontend/src/pages/OrderTracking.tsx",
+          "operation": "create",
+          "description": "Create Order Tracking page with order number input field and a mock order status timeline showing order placed, confirmed, dispatched, out for delivery, and delivered stages with timestamps."
+        },
+        {
+          "path": "frontend/src/pages/OrderHistory.tsx",
+          "operation": "create",
+          "description": "Create Order History page displaying a list of past orders with order number, date, items count, total amount, status, and view details button. Mock data stored in localStorage."
+        },
+        {
+          "path": "frontend/src/pages/UserProfile.tsx",
+          "operation": "create",
+          "description": "Create User Profile page with sections for personal info (name, email, phone), saved addresses list, and edit buttons. Mock user data stored in localStorage."
+        },
+        {
+          "path": "frontend/src/pages/Login.tsx",
+          "operation": "create",
+          "description": "Create Login page with email and password fields, login button, forgot password link, and register link. Implement form validation with inline error messages using vanilla JavaScript. On submission, store mock user session in localStorage and redirect to home page."
+        },
+        {
+          "path": "frontend/src/pages/Register.tsx",
+          "operation": "create",
+          "description": "Create Register page with fields for name, email, phone, password, confirm password, and register button. Implement form validation with inline error messages using vanilla JavaScript. On submission, store mock user data in localStorage and redirect to home page."
+        },
+        {
+          "path": "frontend/src/pages/ForgotPassword.tsx",
+          "operation": "create",
+          "description": "Create Forgot Password page with email input field, submit button, and success message display. Implement form validation with inline error messages using vanilla JavaScript."
+        },
+        {
+          "path": "frontend/src/pages/DealsOffers.tsx",
+          "operation": "create",
+          "description": "Create Deals & Offers page displaying promotional banners, discount coupons with codes, and a grid of discounted products using ProductCard component with discount badges."
+        },
+        {
+          "path": "frontend/src/pages/Blog.tsx",
+          "operation": "create",
+          "description": "Create Blog page (Tips & Recipes) displaying a grid of blog post cards with thumbnail image, title, excerpt, date, and read more button."
+        },
+        {
+          "path": "frontend/src/pages/BlogPost.tsx",
+          "operation": "create",
+          "description": "Create Blog Post Detail page with post title, author, date, featured image, full content, and related posts section. Use URL parameters to display different posts."
+        },
+        {
+          "path": "frontend/src/pages/FAQ.tsx",
+          "operation": "create",
+          "description": "Create FAQ page with an accordion component for frequently asked questions organized by category (Orders, Delivery, Payments, Returns). Implement accordion expand/collapse functionality using vanilla JavaScript."
+        },
+        {
+          "path": "frontend/src/pages/PrivacyPolicy.tsx",
+          "operation": "create",
+          "description": "Create Privacy Policy page with sections covering data collection, usage, cookies, user rights, and contact information."
+        },
+        {
+          "path": "frontend/src/pages/TermsConditions.tsx",
+          "operation": "create",
+          "description": "Create Terms & Conditions page with sections covering service usage terms, user responsibilities, limitations of liability, and governing law."
+        },
+        {
+          "path": "frontend/src/pages/RefundReturnPolicy.tsx",
+          "operation": "create",
+          "description": "Create Refund & Return Policy page with sections explaining return eligibility, refund process, timeframes, and conditions."
+        },
+        {
+          "path": "frontend/src/pages/DeliveryInformation.tsx",
+          "operation": "create",
+          "description": "Create Delivery Information page with sections explaining delivery areas, timeslots, fees, and special instructions."
+        },
+        {
+          "path": "frontend/src/pages/StoreLocator.tsx",
+          "operation": "create",
+          "description": "Create Store Locator / Coverage Areas page with a list of serviceable cities/areas, zip code checker input, and a map placeholder showing coverage zones."
+        },
+        {
+          "path": "frontend/src/pages/Careers.tsx",
+          "operation": "create",
+          "description": "Create Careers page with company culture section, open positions list with job title, location, and apply button, and an application form section with file upload placeholder."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routes for all 35 pages (All Categories, 13 category pages, Product Detail, Search Results, Cart, Checkout, Order Confirmation, Order Tracking, Order History, User Profile, Login, Register, Forgot Password, Deals & Offers, Blog, Blog Post Detail, FAQ, Privacy Policy, Terms & Conditions, Refund & Return Policy, Delivery Information, Store Locator, Careers). Wire all routes into the navigation menu, footer links, or category dropdowns as appropriate."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement global responsive layout using Bootstrap 5 grid with sticky navbar, responsive breakpoints, and cart badge",
+      "acceptanceCriteria": [
+        "Navigation collapses into hamburger menu on mobile",
+        "All grids reflow correctly at each breakpoint",
+        "Cart badge updates when items are added"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Ensure the Layout component implements a sticky top navigation bar using Bootstrap 5 navbar classes. Include a hamburger toggle button that collapses/expands the navigation menu on mobile screens (≤768px). Add the FreshCart logo from frontend/public/assets/generated/freshcart-logo.dim_300x80.png, category dropdown links, search bar, cart icon with a dynamic item count badge, and login/account button. Use Bootstrap 5 utility classes for responsive behavior."
+        },
+        {
+          "path": "frontend/public/index.html",
+          "operation": "modify",
+          "description": "Add Bootstrap 5 CSS CDN link in the <head> section and Bootstrap 5 JavaScript bundle CDN link before the closing </body> tag to enable Bootstrap grid system and interactive components like navbar collapse."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add custom CSS to ensure responsive behavior at mobile (≥320px), tablet (≥768px), and desktop (≥1200px) breakpoints. Include media queries for grid reflow, font size adjustments, and spacing. Ensure all product grids and sections adapt to the viewport width."
+        },
+        {
+          "path": "frontend/src/utils/cart.ts",
+          "operation": "create",
+          "description": "Create cart utility functions to manage cart state in localStorage (getCart, addToCart, updateQuantity, removeFromCart, getCartCount). Export a function to update the cart badge count in the navbar. These utilities will be used by add-to-cart buttons and the cart page."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Wire the cart badge in the navbar to display the live cart item count using the getCartCount utility. Ensure the badge updates whenever the cart state changes by listening to localStorage events or calling getCartCount on component mount and cart updates."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement client-side interactivity: add-to-cart, quantity controls, search filtering, form validation, FAQ accordion, and hero carousel",
+      "acceptanceCriteria": [
+        "Adding a product updates cart count badge without page reload",
+        "Cart quantities can be changed and totals recalculate",
+        "Search filters product cards in real time",
+        "Forms show inline errors for empty/invalid fields",
+        "FAQ accordion expands/collapses answers",
+        "Hero carousel auto-advances and supports manual navigation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Add an 'Add to Cart' button to the ProductCard component. On click, call the addToCart utility function to add the product to localStorage, update the cart badge count in the navbar, and display a brief success notification. Use vanilla JavaScript event listeners."
+        },
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "modify",
+          "description": "Add quantity increment/decrement buttons for each cart item. On click, call the updateQuantity utility function to adjust the quantity in localStorage and recalculate the cart total and subtotal. Use vanilla JavaScript event listeners and update the DOM without page reload."
+        },
+        {
+          "path": "frontend/src/pages/SearchResults.tsx",
+          "operation": "modify",
+          "description": "Implement real-time search filtering using vanilla JavaScript. On input in the search bar, filter the displayed product cards by matching the search query against product names. Update the visible product cards without page reload."
+        },
+        {
+          "path": "frontend/src/pages/ContactUs.tsx",
+          "operation": "modify",
+          "description": "Add form validation using vanilla JavaScript. On form submit, check for empty or invalid fields (email format, phone format) and display inline error messages below each field. Prevent form submission if validation fails. On successful validation, display a success message and clear the form."
+        },
+        {
+          "path": "frontend/src/pages/Login.tsx",
+          "operation": "modify",
+          "description": "Add form validation using vanilla JavaScript. On form submit, check for empty email and password fields and display inline error messages. Prevent form submission if validation fails. On successful validation, store mock user session in localStorage and redirect to home page."
+        },
+        {
+          "path": "frontend/src/pages/Register.tsx",
+          "operation": "modify",
+          "description": "Add form validation using vanilla JavaScript. On form submit, check for empty fields, valid email format, matching passwords, and display inline error messages. Prevent form submission if validation fails. On successful validation, store mock user data in localStorage and redirect to home page."
+        },
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "modify",
+          "description": "Add form validation using vanilla JavaScript. On form submit, check for empty or invalid delivery address fields and display inline error messages. Prevent form submission if validation fails. On successful validation, redirect to Order Confirmation page."
+        },
+        {
+          "path": "frontend/src/pages/FAQ.tsx",
+          "operation": "modify",
+          "description": "Implement accordion functionality using vanilla JavaScript. On click of a question, toggle the visibility of the answer section. Ensure only one answer is expanded at a time (collapse others when a new one is opened)."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Add an image carousel to the hero banner section using vanilla JavaScript. Implement auto-advance functionality (change slide every 5 seconds) and manual navigation buttons (previous/next). Display at least 3 hero slides with different headlines and CTAs."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Apply cohesive visual design theme: fresh-green and white palette with orange accents, modern typography, consistent product cards, and section styling",
+      "acceptanceCriteria": [
+        "Primary color is green, accent is orange, background is white/light grey",
+        "Product cards are uniform in size and layout across all category pages",
+        "Typography is consistent across all pages",
+        "No unstyled or broken layout on any page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define CSS custom properties (variables) for the color palette: primary green (#28a745 or similar fresh green), accent orange (#ff6f00 or similar warm orange), white background (#ffffff), light grey background (#f8f9fa), and text colors. Define global typography using a modern sans-serif font family (e.g., 'Inter', 'Roboto', or 'Poppins'). Set base font size, line height, and heading styles with bold weights and green underline accents for section headings."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Apply consistent styling to ProductCard: soft shadows (box-shadow), rounded corners (border-radius), uniform card size, product image area with fixed aspect ratio, product name, price in bold green, discount badge in orange with white text, and 'Add to Cart' button in orange with hover effects. Ensure all product cards use these styles across all category pages."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global button styles with green primary buttons and orange accent buttons. Add hover and active states. Define global card styles for reusable components. Ensure consistent spacing (margins, paddings) using a spacing scale (e.g., 8px, 16px, 24px, 32px). Add styles for section headings with bold typography and green underline accents."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Apply the color palette and typography to the navbar and footer. Use green for the navbar background or text, orange for active links or CTAs, and white for backgrounds. Ensure the FreshCart logo is styled consistently."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Integrate generated static image assets: FreshCart logo, hero banner background, and product placeholder",
+      "acceptanceCriteria": [
+        "Logo appears in the navbar and footer on all pages",
+        "Hero banner background image is displayed on the Home page",
+        "All product cards use the placeholder image where no specific image is available"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Wire the FreshCart logo from frontend/public/assets/generated/freshcart-logo.dim_300x80.png into the navbar and footer. Use an <img> tag with appropriate alt text and responsive sizing."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Wire the hero banner background image from frontend/public/assets/generated/hero-banner.dim_1440x560.png as a background image for the hero section. Use CSS background-image or an <img> tag with absolute positioning to create a full-width hero banner."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Wire the product placeholder image from frontend/public/assets/generated/product-placeholder.dim_400x400.png as the default product image for all product cards. Use an <img> tag with appropriate alt text and ensure the image fits within the card's image area."
+        }
+      ]
+    }
+  ]
+}

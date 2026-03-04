@@ -1,0 +1,474 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* FreshCart Brand Colors - OKLCH */
+    --background: 0.99 0 0;
+    --foreground: 0.18 0.02 145;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 145;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 145;
+
+    /* Primary: Fresh Green */
+    --primary: 0.52 0.17 145;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary: Light Green tint */
+    --secondary: 0.95 0.04 145;
+    --secondary-foreground: 0.35 0.12 145;
+
+    /* Accent: Warm Orange */
+    --accent: 0.68 0.19 55;
+    --accent-foreground: 1 0 0;
+
+    --muted: 0.96 0.01 145;
+    --muted-foreground: 0.52 0.04 145;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.9 0.02 145;
+    --input: 0.92 0.02 145;
+    --ring: 0.52 0.17 145;
+
+    --chart-1: 0.52 0.17 145;
+    --chart-2: 0.68 0.19 55;
+    --chart-3: 0.6 0.15 200;
+    --chart-4: 0.75 0.18 80;
+    --chart-5: 0.65 0.2 30;
+
+    --sidebar: 0.97 0.02 145;
+    --sidebar-foreground: 0.18 0.02 145;
+    --sidebar-primary: 0.52 0.17 145;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.04 145;
+    --sidebar-accent-foreground: 0.35 0.12 145;
+    --sidebar-border: 0.9 0.02 145;
+    --sidebar-ring: 0.52 0.17 145;
+
+    /* Custom brand tokens */
+    --green-50: oklch(0.97 0.03 145);
+    --green-100: oklch(0.93 0.06 145);
+    --green-200: oklch(0.87 0.1 145);
+    --green-500: oklch(0.62 0.18 145);
+    --green-600: oklch(0.52 0.17 145);
+    --green-700: oklch(0.42 0.15 145);
+    --orange-400: oklch(0.75 0.18 55);
+    --orange-500: oklch(0.68 0.19 55);
+    --orange-600: oklch(0.60 0.18 55);
+  }
+
+  .dark {
+    --background: 0.12 0.02 145;
+    --foreground: 0.96 0.01 145;
+    --card: 0.16 0.02 145;
+    --card-foreground: 0.96 0.01 145;
+    --popover: 0.18 0.02 145;
+    --popover-foreground: 0.96 0.01 145;
+    --primary: 0.62 0.18 145;
+    --primary-foreground: 0.1 0.01 145;
+    --secondary: 0.22 0.04 145;
+    --secondary-foreground: 0.85 0.05 145;
+    --accent: 0.72 0.18 55;
+    --accent-foreground: 0.1 0.01 145;
+    --muted: 0.22 0.03 145;
+    --muted-foreground: 0.65 0.04 145;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.28 0.04 145;
+    --input: 0.28 0.04 145;
+    --ring: 0.62 0.18 145;
+    --sidebar: 0.16 0.02 145;
+    --sidebar-foreground: 0.96 0.01 145;
+    --sidebar-primary: 0.62 0.18 145;
+    --sidebar-primary-foreground: 0.1 0.01 145;
+    --sidebar-accent: 0.22 0.04 145;
+    --sidebar-accent-foreground: 0.85 0.05 145;
+    --sidebar-border: 0.28 0.04 145;
+    --sidebar-ring: 0.62 0.18 145;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  /* ===== BRAND BUTTONS ===== */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 cursor-pointer;
+    background-color: var(--green-600);
+    color: white;
+  }
+  .btn-primary:hover {
+    background-color: var(--green-700);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px oklch(0.52 0.17 145 / 0.35);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 cursor-pointer;
+    background-color: var(--orange-500);
+    color: white;
+  }
+  .btn-accent:hover {
+    background-color: var(--orange-600);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px oklch(0.68 0.19 55 / 0.35);
+  }
+
+  .btn-outline-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 cursor-pointer border-2;
+    border-color: var(--green-600);
+    color: var(--green-600);
+    background: transparent;
+  }
+  .btn-outline-primary:hover {
+    background-color: var(--green-600);
+    color: white;
+  }
+
+  /* ===== SECTION HEADING ===== */
+  .section-heading {
+    @apply text-2xl md:text-3xl font-bold mb-1;
+    color: oklch(0.18 0.02 145);
+    font-family: 'Poppins', sans-serif;
+  }
+  .section-heading-underline {
+    @apply inline-block h-1 w-12 rounded-full mb-6;
+    background-color: var(--green-600);
+  }
+
+  /* ===== PRODUCT CARD ===== */
+  .product-card {
+    @apply bg-white rounded-xl overflow-hidden transition-all duration-300 cursor-pointer;
+    box-shadow: 0 2px 8px oklch(0.18 0.02 145 / 0.08);
+    border: 1px solid oklch(0.93 0.03 145);
+  }
+  .product-card:hover {
+    box-shadow: 0 8px 24px oklch(0.18 0.02 145 / 0.14);
+    transform: translateY(-3px);
+  }
+  .product-card-img {
+    @apply w-full object-cover;
+    aspect-ratio: 1 / 1;
+    background-color: var(--green-50);
+  }
+  .product-card-body {
+    @apply p-3;
+  }
+  .product-card-name {
+    @apply text-sm font-semibold mb-1 line-clamp-2;
+    color: oklch(0.22 0.03 145);
+    font-family: 'Poppins', sans-serif;
+  }
+  .product-card-price {
+    @apply text-base font-bold;
+    color: var(--green-600);
+  }
+  .product-card-mrp {
+    @apply text-xs line-through ml-1;
+    color: oklch(0.6 0.03 145);
+  }
+  .discount-badge {
+    @apply text-xs font-bold px-2 py-0.5 rounded-full;
+    background-color: var(--orange-500);
+    color: white;
+  }
+  .add-to-cart-btn {
+    @apply w-full py-2 rounded-lg text-sm font-semibold transition-all duration-200 mt-2;
+    background-color: var(--green-600);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .add-to-cart-btn:hover {
+    background-color: var(--green-700);
+  }
+
+  /* ===== CATEGORY CARD ===== */
+  .category-card {
+    @apply flex flex-col items-center justify-center p-4 rounded-2xl transition-all duration-300 cursor-pointer text-center;
+    background-color: var(--green-50);
+    border: 2px solid transparent;
+  }
+  .category-card:hover {
+    border-color: var(--green-600);
+    background-color: var(--green-100);
+    transform: translateY(-2px);
+  }
+  .category-icon {
+    @apply text-4xl mb-2;
+  }
+  .category-name {
+    @apply text-sm font-semibold;
+    color: oklch(0.25 0.05 145);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* ===== NAVBAR ===== */
+  .fc-navbar {
+    @apply sticky top-0 z-50 w-full;
+    background-color: white;
+    box-shadow: 0 2px 12px oklch(0.18 0.02 145 / 0.1);
+  }
+  .fc-navbar-brand {
+    @apply flex items-center gap-2 font-bold text-xl no-underline;
+    color: var(--green-600);
+    font-family: 'Poppins', sans-serif;
+  }
+  .fc-nav-link {
+    @apply text-sm font-medium transition-colors duration-200 no-underline px-3 py-2 rounded-lg;
+    color: oklch(0.3 0.04 145);
+  }
+  .fc-nav-link:hover {
+    color: var(--green-600);
+    background-color: var(--green-50);
+  }
+  .fc-nav-link.active {
+    color: var(--green-600);
+    font-weight: 600;
+  }
+  .cart-badge {
+    @apply absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full text-xs font-bold flex items-center justify-center;
+    background-color: var(--orange-500);
+    color: white;
+  }
+
+  /* ===== HERO ===== */
+  .hero-section {
+    @apply relative overflow-hidden;
+    min-height: 480px;
+    background: linear-gradient(135deg, oklch(0.18 0.08 145) 0%, oklch(0.35 0.14 145) 50%, oklch(0.52 0.17 145) 100%);
+  }
+  .hero-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(to right, oklch(0.12 0.05 145 / 0.85) 0%, oklch(0.12 0.05 145 / 0.4) 60%, transparent 100%);
+  }
+
+  /* ===== FOOTER ===== */
+  .fc-footer {
+    @apply pt-12 pb-6;
+    background-color: oklch(0.14 0.04 145);
+    color: oklch(0.85 0.03 145);
+  }
+  .fc-footer-heading {
+    @apply text-base font-semibold mb-4;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+  }
+  .fc-footer-link {
+    @apply block text-sm mb-2 no-underline transition-colors duration-200;
+    color: oklch(0.72 0.04 145);
+  }
+  .fc-footer-link:hover {
+    color: var(--green-500);
+  }
+
+  /* ===== FORM STYLES ===== */
+  .fc-input {
+    @apply w-full px-4 py-3 rounded-lg border text-sm transition-all duration-200 outline-none;
+    border-color: oklch(0.88 0.03 145);
+    background: white;
+    color: oklch(0.2 0.03 145);
+  }
+  .fc-input:focus {
+    border-color: var(--green-600);
+    box-shadow: 0 0 0 3px oklch(0.52 0.17 145 / 0.15);
+  }
+  .fc-input.error {
+    border-color: oklch(0.577 0.245 27.325);
+  }
+  .fc-label {
+    @apply block text-sm font-semibold mb-1.5;
+    color: oklch(0.25 0.04 145);
+    font-family: 'Poppins', sans-serif;
+  }
+  .fc-error {
+    @apply text-xs mt-1;
+    color: oklch(0.577 0.245 27.325);
+  }
+
+  /* ===== PAGE BANNER ===== */
+  .page-banner {
+    @apply py-10 px-4;
+    background: linear-gradient(135deg, var(--green-50) 0%, var(--green-100) 100%);
+    border-bottom: 3px solid var(--green-200);
+  }
+  .page-banner-title {
+    @apply text-3xl font-bold;
+    color: oklch(0.22 0.06 145);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* ===== MISC ===== */
+  .tag-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    background-color: var(--green-100);
+    color: var(--green-700);
+  }
+  .offer-banner {
+    @apply rounded-2xl p-6 text-white relative overflow-hidden;
+    background: linear-gradient(135deg, oklch(0.52 0.17 145) 0%, oklch(0.42 0.15 145) 100%);
+  }
+  .offer-banner-orange {
+    background: linear-gradient(135deg, oklch(0.68 0.19 55) 0%, oklch(0.58 0.18 40) 100%);
+  }
+  .timeline-dot {
+    @apply w-4 h-4 rounded-full border-4 border-white;
+    background-color: var(--green-600);
+    box-shadow: 0 0 0 3px oklch(0.52 0.17 145 / 0.3);
+  }
+  .timeline-line {
+    @apply absolute left-1.5 top-4 bottom-0 w-0.5;
+    background-color: var(--green-200);
+  }
+  .order-status-step {
+    @apply flex items-center gap-4 py-4;
+  }
+  .order-status-dot {
+    @apply w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm;
+    background-color: var(--green-600);
+  }
+  .order-status-dot.inactive {
+    background-color: oklch(0.88 0.03 145);
+    color: oklch(0.55 0.04 145);
+  }
+  .search-bar-hero {
+    @apply flex items-center gap-0 rounded-xl overflow-hidden;
+    box-shadow: 0 4px 20px oklch(0 0 0 / 0.2);
+  }
+  .search-bar-hero input {
+    @apply flex-1 px-5 py-4 text-base outline-none border-none;
+    color: oklch(0.2 0.03 145);
+  }
+  .search-bar-hero button {
+    @apply px-6 py-4 font-semibold text-white text-sm;
+    background-color: var(--orange-500);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .search-bar-hero button:hover {
+    background-color: var(--orange-600);
+  }
+
+  /* ===== CAROUSEL ===== */
+  .hero-carousel {
+    @apply relative overflow-hidden;
+    min-height: 480px;
+  }
+  .hero-slide {
+    @apply absolute inset-0 transition-opacity duration-700;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .hero-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .carousel-dot {
+    @apply w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer;
+    background-color: oklch(1 0 0 / 0.5);
+  }
+  .carousel-dot.active {
+    background-color: white;
+    width: 24px;
+    border-radius: 9999px;
+  }
+
+  /* ===== BLOG CARD ===== */
+  .blog-card {
+    @apply bg-white rounded-xl overflow-hidden transition-all duration-300;
+    box-shadow: 0 2px 8px oklch(0.18 0.02 145 / 0.08);
+    border: 1px solid oklch(0.93 0.03 145);
+  }
+  .blog-card:hover {
+    box-shadow: 0 8px 24px oklch(0.18 0.02 145 / 0.14);
+    transform: translateY(-3px);
+  }
+
+  /* ===== TEAM CARD ===== */
+  .team-card {
+    @apply bg-white rounded-2xl p-6 text-center transition-all duration-300;
+    box-shadow: 0 2px 12px oklch(0.18 0.02 145 / 0.08);
+    border: 1px solid oklch(0.93 0.03 145);
+  }
+  .team-card:hover {
+    box-shadow: 0 8px 24px oklch(0.18 0.02 145 / 0.14);
+    transform: translateY(-3px);
+  }
+  .team-avatar {
+    @apply w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-white;
+    background: linear-gradient(135deg, var(--green-600), var(--green-500));
+  }
+
+  /* ===== CART ===== */
+  .cart-item {
+    @apply flex items-center gap-4 p-4 bg-white rounded-xl mb-3;
+    box-shadow: 0 1px 4px oklch(0.18 0.02 145 / 0.06);
+    border: 1px solid oklch(0.93 0.03 145);
+  }
+  .qty-btn {
+    @apply w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm transition-all duration-200 cursor-pointer border-none;
+    background-color: var(--green-100);
+    color: var(--green-700);
+  }
+  .qty-btn:hover {
+    background-color: var(--green-600);
+    color: white;
+  }
+
+  /* ===== MISC UTILITIES ===== */
+  .green-text { color: var(--green-600); }
+  .orange-text { color: var(--orange-500); }
+  .green-bg { background-color: var(--green-600); }
+  .orange-bg { background-color: var(--orange-500); }
+  .green-bg-light { background-color: var(--green-50); }
+  .section-pad { @apply py-12 md:py-16; }
+  .container-fc { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* ===== TOAST ===== */
+  .fc-toast {
+    @apply fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl text-white text-sm font-semibold shadow-lg transition-all duration-300;
+    background-color: var(--green-600);
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  .fc-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* ===== MOBILE NAV ===== */
+  .mobile-menu {
+    @apply fixed inset-0 z-40 bg-white flex flex-col pt-20 px-6 transition-transform duration-300;
+    transform: translateX(-100%);
+  }
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+}
